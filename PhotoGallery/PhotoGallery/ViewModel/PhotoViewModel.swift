@@ -23,9 +23,8 @@ final class PhotoViewModel {
     }
   }
 
-  func titleForPhoto(photo: PhotoList.Photo, includeAuthor: Bool) -> String? {
+  func titleForPhoto(photo: PhotoList.Photo) -> String? {
     let photoDescription = (photo.description?.isEmpty ?? true ? photo.alt_description : photo.description) ?? ""
-    let description = includeAuthor ? (photoDescription + "\n\(photo.user.displayUserName)") : photoDescription
-    return description
+    return photoDescription
   }
 }

@@ -9,7 +9,9 @@ import UIKit
 
 class PhotoCollectionViewCell: UICollectionViewCell {
   @IBOutlet var titleLabel: UILabel!
+  @IBOutlet var authorLabel: UILabel!
   @IBOutlet var imageView: UIImageView!
+  @IBOutlet var stackView: UIStackView!
   @IBOutlet var labelHeightConstraint: NSLayoutConstraint!
 
   func collapseTitle() {
@@ -21,7 +23,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
   func expandTitle() {
     UIView.animate(withDuration: 0.5, delay: 0.0, options: .transitionCrossDissolve, animations: {
-      self.labelHeightConstraint.constant = 60
+      self.labelHeightConstraint.constant = 50
       self.contentView.layoutIfNeeded()
     }, completion: nil)
   }

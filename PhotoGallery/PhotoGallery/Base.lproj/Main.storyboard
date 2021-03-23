@@ -23,40 +23,53 @@
                                 <collectionViewLayout key="collectionViewLayout" id="oVU-6W-uD1" customClass="PhotoCollectionCellLayout" customModule="PhotoGallery" customModuleProvider="target"/>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCellIdentifier" id="Pbf-10-yrg" customClass="PhotoCollectionViewCell" customModule="PhotoGallery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="202"/>
+                                        <rect key="frame" x="89.5" y="0.0" width="235" height="348"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6FZ-l3-eJ1">
-                                            <rect key="frame" x="0.0" y="0.0" width="160" height="202"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="235" height="348"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="T1x-6k-2yA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="160" height="176"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="235" height="283"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc8-fL-GRf">
-                                                    <rect key="frame" x="0.0" y="178" width="160" height="21"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="JMO-6d-QfJ">
+                                                    <rect key="frame" x="0.0" y="286" width="235" height="59"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc8-fL-GRf">
+                                                            <rect key="frame" x="0.0" y="0.0" width="235" height="29.5"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="10"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua5-tO-tw6">
+                                                            <rect key="frame" x="0.0" y="29.5" width="235" height="29.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                            <color key="textColor" red="0.017621163282846051" green="0.069462355756175889" blue="0.41003727791878175" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="gfg-Nu-met"/>
+                                                        <constraint firstAttribute="height" constant="59" id="nD5-0U-I57"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.27242506970000002" green="0.50022719940000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="mc8-fL-GRf" firstAttribute="top" secondItem="T1x-6k-2yA" secondAttribute="bottom" constant="2" id="4Y2-8P-mA6"/>
+                                                <constraint firstItem="JMO-6d-QfJ" firstAttribute="top" secondItem="T1x-6k-2yA" secondAttribute="bottom" constant="3" id="6Yd-RB-n8s"/>
                                                 <constraint firstItem="T1x-6k-2yA" firstAttribute="leading" secondItem="6FZ-l3-eJ1" secondAttribute="leading" id="HqY-8a-ald"/>
-                                                <constraint firstItem="mc8-fL-GRf" firstAttribute="leading" secondItem="6FZ-l3-eJ1" secondAttribute="leading" id="RbT-WM-gIs"/>
                                                 <constraint firstItem="T1x-6k-2yA" firstAttribute="top" secondItem="6FZ-l3-eJ1" secondAttribute="top" id="ZwL-ex-cVb"/>
+                                                <constraint firstAttribute="trailing" secondItem="JMO-6d-QfJ" secondAttribute="trailing" id="cZ3-V9-g1Z"/>
                                                 <constraint firstAttribute="trailing" secondItem="T1x-6k-2yA" secondAttribute="trailing" id="fpm-b7-dqA"/>
-                                                <constraint firstAttribute="bottom" secondItem="mc8-fL-GRf" secondAttribute="bottom" constant="3" id="oXq-qH-9IG"/>
-                                                <constraint firstAttribute="trailing" secondItem="mc8-fL-GRf" secondAttribute="trailing" id="pSl-6x-A31"/>
+                                                <constraint firstAttribute="bottom" secondItem="JMO-6d-QfJ" secondAttribute="bottom" constant="3" id="tXP-aJ-ddE"/>
+                                                <constraint firstItem="JMO-6d-QfJ" firstAttribute="leading" secondItem="6FZ-l3-eJ1" secondAttribute="leading" id="xFj-ff-ibu"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="160" height="202"/>
+                                        <size key="customSize" width="235" height="348"/>
                                         <connections>
+                                            <outlet property="authorLabel" destination="Ua5-tO-tw6" id="M8p-nR-U8i"/>
                                             <outlet property="imageView" destination="T1x-6k-2yA" id="Gfm-Lb-sJd"/>
-                                            <outlet property="labelHeightConstraint" destination="gfg-Nu-met" id="YEe-2x-cZQ"/>
+                                            <outlet property="labelHeightConstraint" destination="nD5-0U-I57" id="UFm-Vd-y4J"/>
+                                            <outlet property="stackView" destination="JMO-6d-QfJ" id="BCr-H1-BXH"/>
                                             <outlet property="titleLabel" destination="mc8-fL-GRf" id="vIR-QZ-pPe"/>
                                         </connections>
                                     </collectionViewCell>

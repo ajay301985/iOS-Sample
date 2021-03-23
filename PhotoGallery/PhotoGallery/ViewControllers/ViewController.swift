@@ -34,7 +34,7 @@ class ViewController: UIViewController {
 
   private let viewModel = PhotoViewModel()
   private let imageLoader = ImageDownloader()
-  private let queryString = "office"
+  private let queryString = "road"
   private let cellIdentifier = "photoCellIdentifier"
   private let currentPage = 1
   private var isShowingHeader = false
@@ -67,7 +67,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as! PhotoCollectionViewCell
 
     let currentPhoto = viewModel.photos[indexPath.item]
-    cell.titleLabel.text = viewModel.titleForPhoto(photo: currentPhoto, includeAuthor: true)
+    cell.titleLabel.text = viewModel.titleForPhoto(photo: currentPhoto)
+    cell.authorLabel.text = currentPhoto.user.displayUserName
     guard let imagePath = currentPhoto.url?.small else {
       return cell
     }
@@ -126,7 +127,7 @@ extension ViewController: PinterestLayoutDelegate {
     heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
   {
     let currentPhoto = viewModel.photos[indexPath.item]
-    let calculatedHeight = currentPhoto.isExpand ? currentPhoto.calculatedHeight : (currentPhoto.calculatedHeight - 60.0)
+    let calculatedHeight = currentPhoto.isExpand ? currentPhoto.calculatedHeight : (currentPhoto.calculatedHeight - 50.0)
     return CGFloat(calculatedHeight)
   }
 }

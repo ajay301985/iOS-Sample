@@ -98,6 +98,6 @@ extension PhotoList.Photo.User {
 
 extension PhotoList.Photo {
   var calculatedHeight: Float {
-    return (height * 0.050)
+    return max((height * 0.050), 220)
   }
 }
