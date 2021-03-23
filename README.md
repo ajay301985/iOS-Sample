@@ -8,9 +8,9 @@ expendable thumbnails using modern best practices and latest technologies. This
 assignment shall be presented in English.
 
 ## App Use cases
-1: On application launch app fetch the photo results using unspash API, default query is "nature" and item count set to 30.\
+1: On application launch, App fetch the photo results using unspash serch API, default query is "nature" and item count set to 30.\
 2: Item height is dynamic based on the image \
-3:On click on image, item expand to show the information about image description (2 line max) and user name in "Clicked by: <user name>" and on clicking again on same image it will collapse the item and hide the information.
+3:On click on image, item expand to show the information about image description (2 line max) and user name in "Clicked by: <user name>" format and on clicking again on same image it will collapse the item and hide the information.
 
 ## Configuration
 To configure the page number and item count and query, following variable need to change in ViewController class\
