@@ -7,6 +7,8 @@
 
 import UIKit
 
+let EXPAND_CELL_HEIGHT: CGFloat = 50
+
 class PhotoCollectionViewCell: UICollectionViewCell {
   @IBOutlet var titleLabel: UILabel!
   @IBOutlet var authorLabel: UILabel!
@@ -23,7 +25,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
 
   func expandTitle() {
     UIView.animate(withDuration: 0.5, delay: 0.0, options: .transitionCrossDissolve, animations: {
-      self.labelHeightConstraint.constant = 50
+      self.labelHeightConstraint.constant = EXPAND_CELL_HEIGHT
       self.contentView.layoutIfNeeded()
     }, completion: nil)
   }

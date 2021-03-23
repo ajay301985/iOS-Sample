@@ -10,8 +10,8 @@ import Foundation
 final class PhotoViewModel {
   var photos: [PhotoList.Photo] = []
 
-  func getPhotos(pageNumber: Int, query: String, completion: @escaping (Bool, NetworkError?) -> Void) {
-    PhotoService.getPhotos(pageNumber: pageNumber, query: query) { [weak self] result in
+  func getPhotos(pageNumber: Int, count: Int,query: String, completion: @escaping (Bool, NetworkError?) -> Void) {
+    PhotoService.getPhotos(pageNumber: pageNumber, count: count, query: query) { [weak self] result in
       guard let self = self else { return }
       switch result {
         case .success(let photoList):

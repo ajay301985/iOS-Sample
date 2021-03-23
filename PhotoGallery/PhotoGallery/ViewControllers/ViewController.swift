@@ -34,13 +34,14 @@ class ViewController: UIViewController {
 
   private let viewModel = PhotoViewModel()
   private let imageLoader = ImageDownloader()
-  private let queryString = "road"
+  private let queryString = "nature"
   private let cellIdentifier = "photoCellIdentifier"
   private let currentPage = 1
+  private let itemCount = 30
   private var isShowingHeader = false
 
   private func loadPhotos(pageNumer: Int, queryString: String) {
-    viewModel.getPhotos(pageNumber: pageNumer, query: queryString) { [weak self] isSuccess, error in
+    viewModel.getPhotos(pageNumber: pageNumer, count: itemCount, query: queryString) { [weak self] isSuccess, error in
       guard let self = self else { return }
       DispatchQueue.main.async {
         if isSuccess {
@@ -127,7 +128,7 @@ extension ViewController: PinterestLayoutDelegate {
     heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
   {
     let currentPhoto = viewModel.photos[indexPath.item]
-    let calculatedHeight = currentPhoto.isExpand ? currentPhoto.calculatedHeight : (currentPhoto.calculatedHeight - 50.0)
+    let calculatedHeight = currentPhoto.isExpand ? currentPhoto.calculatedHeight : (currentPhoto.calculatedHeight - Float(EXPAND_CELL_HEIGHT))
     return CGFloat(calculatedHeight)
   }
 }

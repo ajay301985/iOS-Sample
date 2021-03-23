@@ -8,7 +8,7 @@
 import Foundation
 
 enum Request {
-  case getPhotos(Int, String)
+  case getPhotos(Int, Int, String)
 
   // MARK: Internal
 
@@ -22,8 +22,8 @@ enum Request {
 
   private var endpoint: String {
     switch self {
-      case .getPhotos(let pageNumber, let query):
-        return "https://api.unsplash.com/search/photos?page=\(pageNumber)&query=\(query)&client_id=\(clientId)"
+      case .getPhotos(let pageNumber,let count, let query):
+        return "https://api.unsplash.com/search/photos?page=\(pageNumber)&query=\(query)&per_page=\(count)&client_id=\(clientId)"
     }
   }
 

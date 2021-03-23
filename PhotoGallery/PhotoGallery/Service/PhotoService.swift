@@ -10,10 +10,10 @@ import Foundation
 final class PhotoService {
   // MARK: Internal
 
-  static func getPhotos(pageNumber: Int, query: String, completion: @escaping (Swift.Result<PhotoList, NetworkError>) -> Void) {
+  static func getPhotos(pageNumber: Int, count: Int, query: String, completion: @escaping (Swift.Result<PhotoList, NetworkError>) -> Void) {
     let urlconfig = URLSessionConfiguration.default
     urlconfig.timeoutIntervalForRequest = TIMEOUT_INTERVAL
-    URLSession(configuration: urlconfig).dataTask(with: Request.getPhotos(pageNumber, query).urlRequest) { data, response, error in
+    URLSession(configuration: urlconfig).dataTask(with: Request.getPhotos(pageNumber, count ,query).urlRequest) { data, response, error in
       guard let httpResponse = response as? HTTPURLResponse,
         (200 ... 299).contains(httpResponse.statusCode)
       else {
