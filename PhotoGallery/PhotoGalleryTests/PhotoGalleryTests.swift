@@ -10,24 +10,30 @@ import XCTest
 
 class PhotoGalleryTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+  func testUrlRequestWithPage() throws {
+    let request = Request.getPhotos(1, 20, "nature")
+    XCTAssertEqual(request.urlRequest.url?.description, "https://api.unsplash.com/search/photos?page=1&query=nature&per_page=20&client_id=L5IPYvVQ3ig6QLm3NzHWAlPvyPl3sxuYMXDLvrNHPqQ")
+  }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+  func testPhotoTitleWithDescription() throws {
+    let creator = PhotoList.Photo.User(id: "12334", userName: "AjayRawat", name: "Ajay")
+    let photoObj = PhotoList.Photo(isExpand: false, id: "234", description: "description", alt_description: nil, url: nil, width: 101, height: 100, user: creator)
+    let viewModel = PhotoViewModel()
+    let title = viewModel.titleForPhoto(photo: photoObj)
+    XCTAssertEqual(title, "description")
+  }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+  func testPhotoTitleWithoutDescription() throws {
+    let creator = PhotoList.Photo.User(id: "12334", userName: "AjayRawat", name: "Ajay")
+    let photoObj = PhotoList.Photo(isExpand: false, id: "234", description: nil, alt_description: "alternative description", url: nil, width: 101, height: 100, user: creator)
+    let viewModel = PhotoViewModel()
+    let title = viewModel.titleForPhoto(photo: photoObj)
+    XCTAssertEqual(title, "alternative description")
+  }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+  func testPhotoUser() throws {
+    let creator = PhotoList.Photo.User(id: "12334", userName: "AjayRawat", name: "Ajay")
+    XCTAssertEqual(creator.displayUserName, "Clicked By: AjayRawat")
+  }
 
 }
