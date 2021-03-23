@@ -12,7 +12,7 @@ protocol PinterestLayoutDelegate: AnyObject {
   func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat
 }
 
-class PhotoCollectionCellLayout: UICollectionViewLayout {
+final class PhotoCollectionCellLayout: UICollectionViewLayout {
   // MARK: Internal
 
   weak var delegate: PinterestLayoutDelegate?

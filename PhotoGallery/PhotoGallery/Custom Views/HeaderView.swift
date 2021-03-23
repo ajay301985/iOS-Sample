@@ -10,7 +10,7 @@
 
 import UIKit
 
-class HeaderView: UIView {
+final class HeaderView: UIView {
 
   private let headerTitleLabel: UILabel = {
     let header = UILabel()
